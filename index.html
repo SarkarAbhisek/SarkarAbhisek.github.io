@@ -4,759 +4,1793 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abhisek Sarkar - AI/ML/NLP Researcher</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <meta name="description" content="AI/ML/NLP Researcher specializing in bias detection, legal AI, and computational modeling. PhD candidate seeking opportunities in machine learning and natural language processing.">
+    <meta name="keywords" content="AI, ML, NLP, bias detection, legal AI, LLM, machine learning, research, PhD">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    
     <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .cert-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #06b6d4;
+            --accent-color: #8b5cf6;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --bg-dark: #0f172a;
+            --bg-darker: #020617;
+            --text-light: #f8fafc;
+            --text-gray: #94a3b8;
+            --card-bg: #1e293b;
+            --border-color: #334155;
+            --gradient-1: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
+            --gradient-2: linear-gradient(45deg, #10b981 0%, #06b6d4 100%);
         }
-        .cert-card {
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Enhanced Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
             transition: all 0.3s ease;
-            cursor: pointer;
         }
+
+        .navbar.scrolled {
+            background: rgba(15, 23, 42, 0.98);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: var(--primary-color);
+            transition: all 0.3s;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Enhanced Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: var(--bg-darker);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 2;
+            padding: 0 2rem;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.3)); }
+            to { filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.5)); }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero-tagline {
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .social-links a {
+            color: var(--text-gray);
+            font-size: 1.8rem;
+            transition: all 0.3s;
+            padding: 1rem;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+            transform: translateY(-5px) scale(1.1);
+            background: rgba(99, 102, 241, 0.1);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Enhanced Section Styles */
+        .section {
+            padding: 6rem 0;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            margin-bottom: 4rem;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Enhanced About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 5rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 30px;
+            background: var(--gradient-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 25px;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-gray);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-category {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background: var(--bg-darker);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Enhanced Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 25px;
+            padding: 2.5rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .project-status {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .status-ongoing {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--warning-color);
+        }
+
+        .status-completed {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--success-color);
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .project-description {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .tech-tag {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .project-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-links a:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        /* Enhanced Research Timeline */
+        .research-timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .research-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--gradient-1);
+            border-radius: 2px;
+        }
+
+        .research-item {
+            position: relative;
+            margin-bottom: 4rem;
+            padding-left: 3rem;
+        }
+
+        .research-item::before {
+            content: '';
+            position: absolute;
+            left: -1.2rem;
+            top: 1rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            background: var(--primary-color);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--bg-dark), 0 0 20px rgba(99, 102, 241, 0.5);
+        }
+
+        .research-content {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+
+        .research-content:hover {
+            transform: translateX(10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .research-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .research-institution {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .research-description {
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Enhanced Experience Section */
+        .experience-grid {
+            display: grid;
+            gap: 2.5rem;
+        }
+
+        .experience-item {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 3rem;
+            align-items: start;
+            transition: all 0.3s;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .experience-meta {
+            text-align: center;
+        }
+
+        .experience-date {
+            background: var(--gradient-1);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .experience-company {
+            color: var(--secondary-color);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .experience-details h3 {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .experience-details p {
+            color: var(--text-gray);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        /* Enhanced Achievements Section */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .achievement-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .achievement-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .achievement-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .achievement-org {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .achievement-description {
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* Certifications Section */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .cert-category {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+
+        .cert-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .cert-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .cert-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .cert-item {
+            background: var(--bg-darker);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+
+        .cert-item:hover {
+            transform: translateX(5px);
+            background: rgba(99, 102, 241, 0.05);
+            border-color: var(--primary-color);
+        }
+
+        .cert-item h4 {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .cert-provider {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .cert-grade {
+            color: var(--success-color);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .cert-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .cert-link:hover {
+            color: var(--secondary-color);
+            transform: translateX(3px);
+        }
+
+        /* Enhanced Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .contact-info {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 25px;
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-form {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 25px;
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 15px;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(6, 182, 212, 0.1);
+            border-radius: 50%;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background: var(--bg-darker);
+            color: var(--text-light);
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        /* Enhanced Footer */
+        .footer {
+            background: var(--bg-darker);
+            text-align: center;
+            padding: 3rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-gray);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--gradient-1);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 3rem;
+            }
+        }
+
         @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .experience-item {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .social-links {
+                gap: 1rem;
+            }
+
+            .social-links a {
+                font-size: 1.5rem;
+                padding: 0.8rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .research-timeline {
+                padding-left: 2rem;
+            }
+
+            .research-item {
+                padding-left: 2rem;
+            }
+
             .certifications-grid {
                 grid-template-columns: 1fr;
             }
         }
+
+        @media (max-width: 480px) {
+            .section {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .hero-content {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Additional Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
     </style>
 </head>
-<body class="bg-gray-100 font-sans">
+<body>
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex">
-                    <div class="flex-shrink-0 flex items-center">
-                        <span class="text-2xl font-bold text-gray-800">AS</span>
-                    </div>
-                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                        <a href="#home" class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                        <a href="#about" class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">About</a>
-                        <a href="#projects" class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-                        <a href="#research" class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Research</a>
-                        <a href="#experience" class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Experience</a>
-                        <a href="#achievements" class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Achievements</a>
-                        <a href="#contact" class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
-                    </div>
-                </div>
-                <div class="-mr-2 flex items-center sm:hidden">
-                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="sm:hidden" id="mobile-menu">
-            <div class="pt-2 pb-3 space-y-1">
-                <a href="#home" class="block pl-3 pr-4 py-2 text-base font-medium text-gray-900 hover:bg-gray-50">Home</a>
-                <a href="#about" class="block pl-3 pr-4 py-2 text-base font-medium text-gray-900 hover:bg-gray-50">About</a>
-                <a href="#projects" class="block pl-3 pr-4 py-2 text-base font-medium text-gray-900 hover:bg-gray-50">Projects</a>
-                <a href="#research" class="block pl-3 pr-4 py-2 text-base font-medium text-gray-900 hover:bg-gray-50">Research</a>
-                <a href="#experience" class="block pl-3 pr-4 py-2 text-base font-medium text-gray-900 hover:bg-gray-50">Experience</a>
-                <a href="#achievements" class="block pl-3 pr-4 py-2 text-base font-medium text-gray-900 hover:bg-gray-50">Achievements</a>
-                <a href="#contact" class="block pl-3 pr-4 py-2 text-base font-medium text-gray-900 hover:bg-gray-50">Contact</a>
-            </div>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">AS</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="gradient-bg text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Abhisek Sarkar</h1>
-            <h2 class="text-xl md:text-2xl mb-6">AI/ML/NLP Researcher</h2>
-            <p class="text-lg mb-4">PhD Aspirant • IISER Kolkata Graduate • Bias Detection Specialist</p>
-            <p class="max-w-2xl mx-auto mb-8">Building intelligent systems at the intersection of law, language, and learning. Specializing in bias detection in Large Language Models, legal AI applications, and computational modeling for social good. Passionate about creating fair and equitable AI systems.</p>
-            <div class="flex justify-center gap-4">
-                <a href="#contact" class="bg-white text-indigo-600 px-6 py-3 rounded-full font-semibold hover:bg-indigo-100">Let's Connect</a>
-                <a href="Abhisek_Sarkar_CV-4.pdf" class="bg-transparent border-2 border-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-indigo-600">Download CV</a>
+    <section id="home" class="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <h1 class="hero-title">Abhisek Sarkar</h1>
+            <p class="hero-subtitle">AI/ML/NLP Researcher</p>
+            <p class="hero-tagline">PhD Aspirant • IISER Kolkata Graduate • Bias Detection Specialist</p>
+            <p class="hero-description">
+                Building intelligent systems at the intersection of law, language, and learning. 
+                Specializing in bias detection in Large Language Models, legal AI applications, and 
+                computational modeling for social good. Passionate about creating fair and equitable AI systems.
+            </p>
+            
+            <div class="social-links">
+                <a href="https://linkedin.com/in/abhiseksarkar01" aria-label="LinkedIn" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/SarkarAbhisek" aria-label="GitHub" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://x.com/abhisek404" aria-label="Twitter" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://SarkarAbhisek.github.io" aria-label="Personal Website" target="_blank">
+                    <i class="fas fa-globe"></i>
+                </a>
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i>
+                    Let's Connect
+                </a>
+                <a href="https://raw.githubusercontent.com/SarkarAbhisek/SarkarAbhisek.github.io/main/CV.pdf" class="btn btn-secondary" target="_blank">
+                    <i class="fas fa-download"></i>
+                    Download CV
+                </a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">About Me</h2>
-            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8" data-aos="fade-up">Integrated BS-MS graduate passionate about AI fairness and social justice</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div data-aos="fade-up">
-                    <p class="text-gray-600 mb-4">I'm an Integrated BS-MS graduate from IISER Kolkata with a Physics major and Computer Science minor. My research focuses on bias detection in large language models using legal texts, exploring how AI systems can be made more fair and equitable.</p>
-                    <p class="text-gray-600 mb-4">Currently working on my MS thesis under Prof. Kripabandhu Ghosh, where I utilize LLMs to predict Supreme Court case outcomes and measure gender bias sensitivity through linguistic interventions. My work demonstrates how LLMs internalize societal biases and how we can potentially mitigate them.</p>
-                    <p class="text-gray-600">I'm passionate about the intersection of AI and social justice, developing tools that can democratize access to legal information and healthcare. My goal is to pursue PhD research in AI bias detection and fairness, contributing to more equitable AI systems for society.</p>
-                </div>
-                <div class="grid grid-cols-2 gap-4 text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="bg-gray-100 p-4 rounded-lg">
-                        <p class="text-2xl font-bold text-indigo-600">5+</p>
-                        <p class="text-gray-600">Years of Research</p>
-                    </div>
-                    <div class="bg-gray-100 p-4 rounded-lg">
-                        <p class="text-2xl font-bold text-indigo-600">15+</p>
-                        <p class="text-gray-600">Research Projects</p>
-                    </div>
-                    <div class="bg-gray-100 p-4 rounded-lg">
-                        <p class="text-2xl font-bold text-indigo-600">25+</p>
-                        <p class="text-gray-600">Certifications</p>
-                    </div>
-                    <div class="bg-gray-100 p-4 rounded-lg">
-                        <p class="text-2xl font-bold text-indigo-600">10+</p>
-                        <p class="text-gray-600">GitHub Repositories</p>
-                    </div>
+    <section id="about" class="section">
+        <h2 class="section-title" data-aos="fade-up">About Me</h2>
+        <p class="section-subtitle" data-aos="fade-up">
+            Integrated BS-MS graduate passionate about AI fairness and social justice
+        </p>
+        
+        <div class="about-content">
+            <div class="about-image" data-aos="fade-right">
+                <div class="profile-image">
+                    <img src="images/pic.jpg" alt="Abhisek Sarkar">
                 </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mt-12" data-aos="fade-up">
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Programming Languages</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Python</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">R</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">C/C++</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">MATLAB</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Julia</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">HTML</span>
-                    </div>
+            <div class="about-text" data-aos="fade-left">
+                <p>
+                    I'm an Integrated BS-MS graduate from IISER Kolkata with a Physics major and Computer Science minor. 
+                    My research focuses on bias detection in large language models using legal texts, exploring how AI systems 
+                    can be made more fair and equitable.
+                </p>
+                <p>
+                    Currently working on my MS thesis under Prof. Kripabandhu Ghosh, where I utilize LLMs to predict Supreme Court 
+                    case outcomes and measure gender bias sensitivity through linguistic interventions. My work demonstrates how 
+                    LLMs internalize societal biases and how we can potentially mitigate them.
+                </p>
+                <p>
+                    I'm passionate about the intersection of AI and social justice, developing tools that can democratize access 
+                    to legal information and healthcare. My goal is to pursue PhD research in AI bias detection and fairness, 
+                    contributing to more equitable AI systems for society.
+                </p>
+            </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid" data-aos="fade-up">
+            <div class="stat-item">
+                <div class="stat-number">5+</div>
+                <div class="stat-label">Years of Research</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Research Projects</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">25+</div>
+                <div class="stat-label">Certifications</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">GitHub Repositories</div>
+            </div>
+        </div>
+        
+        <div class="skills-grid" data-aos="fade-up">
+            <div class="skill-category">
+                <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">R</span>
+                    <span class="skill-tag">C/C++</span>
+                    <span class="skill-tag">MATLAB</span>
+                    <span class="skill-tag">Julia</span>
+                    <span class="skill-tag">HTML</span>
                 </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-4">AI/ML Frameworks</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">PyTorch</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">TensorFlow</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">scikit-learn</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">NLTK</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">PyLucene</span>
-                    </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-robot"></i> AI/ML Frameworks</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">PyTorch</span>
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">scikit-learn</span>
+                    <span class="skill-tag">NLTK</span>
+                    <span class="skill-tag">PyLucene</span>
                 </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Web & Data</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Django</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Flask</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Pandas</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">NumPy</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">MySQL</span>
-                    </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-database"></i> Web & Data</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Django</span>
+                    <span class="skill-tag">Flask</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">MySQL</span>
                 </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Specializations</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">NLP</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">LLMs</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Bias Detection</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Legal AI</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Deep Learning</span>
-                    </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-brain"></i> Specializations</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">NLP</span>
+                    <span class="skill-tag">LLMs</span>
+                    <span class="skill-tag">Bias Detection</span>
+                    <span class="skill-tag">Legal AI</span>
+                    <span class="skill-tag">Deep Learning</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Featured Projects</h2>
-            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8" data-aos="fade-up">Innovative AI solutions addressing real-world challenges in law, healthcare, and social justice</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Bias Detection in LLMs using Legal Texts</h3>
-                    <p class="text-gray-600 mb-4">Utilizing LLMs to predict Supreme Court case outcomes and measuring gender bias sensitivity through linguistic interventions. Achieved significant correlation drops post-intervention, demonstrating how LLMs internalize societal biases.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Python</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">PyTorch</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">NLP</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">SHAP</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Legal AI</span>
-                    </div>
-                    <div class="flex gap-4">
-                        <a href="#" class="text-indigo-600 hover:underline">GitHub</a>
-                        <a href="#" class="text-indigo-600 hover:underline">Thesis (Coming Soon)</a>
-                    </div>
+    <section id="projects" class="section">
+        <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+        <p class="section-subtitle" data-aos="fade-up">
+            Innovative AI solutions addressing real-world challenges in law, healthcare, and social justice
+        </p>
+        
+        <div class="projects-grid">
+            <div class="project-card" data-aos="fade-up">
+                <span class="project-status status-ongoing">Ongoing - MS Thesis</span>
+                <h3 class="project-title">Bias Detection in LLMs using Legal Texts</h3>
+                <p class="project-description">
+                    Utilizing LLMs to predict Supreme Court case outcomes and measuring gender bias sensitivity through 
+                    linguistic interventions. Achieved significant correlation drops post-intervention, demonstrating 
+                    how LLMs internalize societal biases.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">PyTorch</span>
+                    <span class="tech-tag">NLP</span>
+                    <span class="tech-tag">SHAP</span>
+                    <span class="tech-tag">Legal AI</span>
+                    <span class="tech-tag">Statistical Analysis</span>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">AI-Powered Diabetes Assistant</h3>
-                    <p class="text-gray-600 mb-4">Django-based web application providing personalized healthcare advice for diabetes patients in rural areas. Collaboration with AIIMS Kalyani for real-world medical applications using ML for risk assessment.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Django</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Machine Learning</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Healthcare AI</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Web Development</span>
-                    </div>
-                    <div class="flex gap-4">
-                        <a href="#" class="text-indigo-600 hover:underline">GitHub</a>
-                        <a href="#" class="text-indigo-600 hover:underline">Live Demo (Soon)</a>
-                    </div>
+                <div class="project-links">
+                    <a href="https://github.com/SarkarAbhisek/LLM_RAG_SCJudgments" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://drive.google.com/file/d/1roRQJYRmC6DEISmh_QKLV7k4YgI8aCAV/view?usp=sharing" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Thesis Link
+                    </a>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Language Detector (200+ Languages)</h3>
-                    <p class="text-gray-600 mb-4">FastText and n-gram-based classification models capable of detecting 200+ languages with >99% accuracy. Supports multilingual text analysis and real-time language identification.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Python</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">FastText</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">N-grams</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">NLP</span>
-                    </div>
-                    <div class="flex gap-4">
-                        <a href="#" class="text-indigo-600 hover:underline">GitHub</a>
-                        <a href="#" class="text-indigo-600 hover:underline">Demo</a>
-                    </div>
+            </div>
+            
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <span class="project-status status-ongoing">Ongoing</span>
+                <h3 class="project-title">AI-Powered Diabetes Assistant</h3>
+                <p class="project-description">
+                    Django-based web application providing personalized healthcare advice for diabetes patients in rural areas. 
+                    Collaboration with AIIMS Kalyani for real-world medical applications using ML for risk assessment.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">Django</span>
+                    <span class="tech-tag">Machine Learning</span>
+                    <span class="tech-tag">Healthcare AI</span>
+                    <span class="tech-tag">Web Development</span>
+                    <span class="tech-tag">MySQL</span>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Legal Assistant Chatbot</h3>
-                    <p class="text-gray-600 mb-4">RAG-powered AI chatbot helping Indians understand constitutional rights and legal provisions. Retrieves relevant information from the Constitution of India with expert-level responses using NLP.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Python</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">RAG</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">LLM</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Legal AI</span>
-                    </div>
-                    <div class="flex gap-4">
-                        <a href="#" class="text-indigo-600 hover:underline">GitHub</a>
-                        <a href="#" class="text-indigo-600 hover:underline">Live Demo</a>
-                    </div>
+                <div class="project-links">
+                    <a href="https://github.com/SarkarAbhisek/GlucoGuide" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="#" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Live Demo (Soon)
+                    </a>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Tax Fraud Detection System</h3>
-                    <p class="text-gray-600 mb-4">Machine learning model using Isolation Forest to identify anomalous tax returns indicative of potential fraud. Helps improve financial compliance and resource allocation.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Python</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Isolation Forest</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Anomaly Detection</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">FinTech</span>
-                    </div>
-                    <div class="flex gap-4">
-                        <a href="#" class="text-indigo-600 hover:underline">GitHub</a>
-                        <a href="#" class="text-indigo-600 hover:underline">Report</a>
-                    </div>
+            </div>
+            
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <span class="project-status status-completed">Completed</span>
+                <h3 class="project-title">Language Detector (200+ Languages)</h3>
+                <p class="project-description">
+                    FastText and n-gram-based classification models capable of detecting 200+ languages with >99% accuracy. 
+                    Supports multilingual text analysis and real-time language identification for global applications.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">FastText</span>
+                    <span class="tech-tag">N-grams</span>
+                    <span class="tech-tag">NLP</span>
+                    <span class="tech-tag">Classification</span>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Poetry Generator with LSTM</h3>
-                    <p class="text-gray-600 mb-4">LSTM-powered RNN that generates poetry in the style of famous English poets like Shakespeare, Wordsworth, and Frost. Demonstrates creative applications of deep learning.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Python</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">LSTM</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">RNN</span>
-                        <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Creative AI</span>
-                    </div>
-                    <div class="flex gap-4">
-                        <a href="#" class="text-indigo-600 hover:underline">GitHub</a>
-                        <a href="#" class="text-indigo-600 hover:underline">Try It</a>
-                    </div>
+                <div class="project-links">
+                    <a href="https://github.com/SarkarAbhisek/language_detector" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="#" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Demo
+                    </a>
+                </div>
+            </div>
+            
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                <span class="project-status status-completed">Completed</span>
+                <h3 class="project-title">Indian Constitution Chatbot</h3>
+                <p class="project-description">
+                    RAG-powered AI chatbot helping Indians understand constitutional rights and legal provisions. 
+                    Retrieves relevant information from the Constitution of India with expert-level responses using NLP.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">RAG</span>
+                    <span class="tech-tag">LLM</span>
+                    <span class="tech-tag">Legal AI</span>
+                    <span class="tech-tag">Flask</span>
+                    <span class="tech-tag">PyLucene</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/SarkarAbhisek/Indian_constitution_chatbot" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="#" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                </div>
+            </div>
+            
+            <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                <span class="project-status status-completed">Completed</span>
+                <h3 class="project-title">Legal Helper Bot</h3>
+                <p class="project-description">
+                    RAG-based chatbot offering legal aid to Indians, retrieving relevant Bare Act provisions with NLP for expert responses.
+                    Helps users understand complex legal documents and provides accessible legal guidance.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">RAG</span>
+                    <span class="tech-tag">NLP</span>
+                    <span class="tech-tag">Legal AI</span>
+                    <span class="tech-tag">Information Retrieval</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/SarkarAbhisek/legal_assistant_rag" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="#" target="_blank">
+                        <i class="fas fa-file-pdf"></i> Report
+                    </a>
+                </div>
+            </div>
+            
+            <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+                <span class="project-status status-completed">Completed</span>
+                <h3 class="project-title">Poetry Generator with LSTM</h3>
+                <p class="project-description">
+                    LSTM-powered RNN that generates poetry in the style of famous English poets like Shakespeare, 
+                    Wordsworth, and Frost. Demonstrates creative applications of deep learning in literature.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">LSTM</span>
+                    <span class="tech-tag">RNN</span>
+                    <span class="tech-tag">Creative AI</span>
+                    <span class="tech-tag">TensorFlow</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/SarkarAbhisek/PoetryModel" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="#" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Try It
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Research Section -->
-    <section id="research" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Research Experience</h2>
-            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8" data-aos="fade-up">Exploring the frontiers of AI, physics, and computational science across prestigious institutions</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-gray-50 p-6 rounded-lg shadow-lg" data-aos="fade-up">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">MS Thesis: Bias Detection in LLMs</h3>
-                    <p class="text-gray-600 mb-2">IISER Kolkata • 2024-2025</p>
-                    <p class="text-gray-600">Utilizing large language models to predict Supreme Court case outcomes and measuring gender bias sensitivity through linguistic interventions. Supervisor: Prof. Kripabandhu Ghosh.</p>
+    <section id="research" class="section">
+        <h2 class="section-title" data-aos="fade-up">Research Experience</h2>
+        <p class="section-subtitle" data-aos="fade-up">
+            Exploring the frontiers of AI, physics, and computational science across prestigious institutions
+        </p>
+        
+        <div class="research-timeline">
+            <div class="research-item" data-aos="fade-right">
+                <div class="research-content">
+                    <h3 class="research-title">MS Thesis: Bias Detection in LLMs</h3>
+                    <p class="research-institution">IISER Kolkata • 2024-2025</p>
+                    <p class="research-description">
+                        Utilizing large language models to predict Supreme Court case outcomes and measuring gender bias 
+                        sensitivity through linguistic interventions. Supervisor: Prof. Kripabandhu Ghosh. 
+                        Demonstrating how LLMs internalize societal biases and exploring mitigation techniques.
+                    </p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Statistical Properties of Field Theories</h3>
-                    <p class="text-gray-600 mb-2">UC Berkeley • Summer 2023</p>
-                    <p class="text-gray-600">Analyzed statistical properties of field theories using Monte Carlo simulations. Explored applications in quantum settings and conducted comprehensive literature review.</p>
+            </div>
+            
+            <div class="research-item" data-aos="fade-left">
+                <div class="research-content">
+                    <h3 class="research-title">Statistical Properties of Field Theories</h3>
+                    <p class="research-institution">UC Berkeley • Summer 2023</p>
+                    <p class="research-description">
+                        Analyzed statistical properties of field theories using Monte Carlo simulations. Explored 
+                        applications in quantum settings and conducted comprehensive literature review on Ising model, 
+                        Φ⁴ theory, and O(n) models.
+                    </p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-lg" data-aos="fade-up">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Black Holes and Their Properties</h3>
-                    <p class="text-gray-600 mb-2">IIT Bhubaneswar • 2022-2024</p>
-                    <p class="text-gray-600">Worked on theoretical aspects of black hole physics under Dr. Chandrasekhar Bhamidipati. Investigated fundamental properties and thermodynamic behavior of black holes.</p>
+            </div>
+            
+            <div class="research-item" data-aos="fade-right">
+                <div class="research-content">
+                    <h3 class="research-title">Black Holes and Their Properties</h3>
+                    <p class="research-institution">IIT Bhubaneswar • 2022-2024</p>
+                    <p class="research-description">
+                        Worked on theoretical aspects of black hole physics under Dr. Chandrasekhar Bhamidipati. 
+                        Investigated fundamental properties and thermodynamic behavior of black holes, contributing 
+                        to our understanding of gravitational physics.
+                    </p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Black Hole Shadows and Photon Rings</h3>
-                    <p class="text-gray-600 mb-2">Instituto de Astrofísica, Portugal • 2022</p>
-                    <p class="text-gray-600">Studied black hole shadows and photon rings under Dr. Francisco S. N. Lobo. Focused on observational signatures of black holes.</p>
+            </div>
+            
+            <div class="research-item" data-aos="fade-left">
+                <div class="research-content">
+                    <h3 class="research-title">Black Hole Shadows and Photon Rings</h3>
+                    <p class="research-institution">Instituto de Astrofísica, Portugal • 2022</p>
+                    <p class="research-description">
+                        Studied black hole shadows and photon rings under Dr. Francisco S. N. Lobo. 
+                        Focused on observational signatures of black holes and their theoretical implications 
+                        for modern astrophysics and gravitational wave detection.
+                    </p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-lg" data-aos="fade-up">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Dynamics of Bouncing Balls</h3>
-                    <p class="text-gray-600 mb-2">IISER Kolkata • 2022</p>
-                    <p class="text-gray-600">Investigated the complex dynamics of bouncing ball systems under Dr. Soumitro Banerjee. Explored chaos theory and nonlinear dynamics.</p>
+            </div>
+            
+            <div class="research-item" data-aos="fade-right">
+                <div class="research-content">
+                    <h3 class="research-title">Dynamics of Bouncing Balls</h3>
+                    <p class="research-institution">IISER Kolkata • 2022</p>
+                    <p class="research-description">
+                        Investigated the complex dynamics of bouncing ball systems under Dr. Soumitro Banerjee. 
+                        Explored chaos theory and nonlinear dynamics in mechanical systems, analyzing bifurcation 
+                        patterns and strange attractors.
+                    </p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Radio Astronomy Summer Programme</h3>
-                    <p class="text-gray-600 mb-2">Naxxatra Sciences • 2022</p>
-                    <p class="text-gray-600">12-week theoretical project in radio astronomy under Prof. Rajaram Nityananda. Explored radio wave propagation and astronomical observations.</p>
+            </div>
+            
+            <div class="research-item" data-aos="fade-left">
+                <div class="research-content">
+                    <h3 class="research-title">Radio Astronomy Summer Programme</h3>
+                    <p class="research-institution">Naxxatra Sciences • 2022</p>
+                    <p class="research-description">
+                        12-week theoretical project in radio astronomy under Prof. Rajaram Nityananda. 
+                        Explored radio wave propagation, antenna theory, and astronomical observations, 
+                        gaining deep insights into observational astrophysics techniques.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Professional Experience</h2>
-            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8" data-aos="fade-up">Building expertise through diverse internships, teaching roles, and industry collaborations</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">AI-Powered Diabetes Assistant Developer</h3>
-                    <p class="text-gray-600 mb-2">AIIMS Kalyani & IISER Kolkata • 2024-Present</p>
-                    <p class="text-gray-600">Developing a Django-based web application for personalized healthcare advice for diabetes patients. Supervisor: Prof. Kripabandhu Ghosh.</p>
+    <section id="experience" class="section">
+        <h2 class="section-title" data-aos="fade-up">Professional Experience</h2>
+        <p class="section-subtitle" data-aos="fade-up">
+            Building expertise through diverse internships, teaching roles, and industry collaborations
+        </p>
+        
+        <div class="experience-grid">
+            <div class="experience-item" data-aos="fade-up">
+                <div class="experience-meta">
+                    <div class="experience-date">2024-Present</div>
+                    <div class="experience-company">AIIMS Kalyani & IISER Kolkata</div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Tax Fraud Detection Researcher</h3>
-                    <p class="text-gray-600 mb-2">IISER Kolkata • Aug-Dec 2024</p>
-                    <p class="text-gray-600">Developed a machine learning model using Isolation Forest to identify anomalous tax returns. Supervisor: Prof. Tushar Kanti Nandi.</p>
+                <div class="experience-details">
+                    <h3>AI-Powered Diabetes Assistant Developer</h3>
+                    <p>
+                        Developing a comprehensive Django-based web application to provide personalized healthcare advice 
+                        for diabetes patients in rural areas. Leveraging advanced ML techniques for accurate risk assessment, 
+                        medication suggestions, and lifestyle recommendations through an intuitive web interface.
+                    </p>
+                    <p>
+                        <strong>Supervisor:</strong> Prof. Kripabandhu Ghosh, Department of Computational and Data Sciences (CDS)
+                    </p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">RAG System Developer</h3>
-                    <p class="text-gray-600 mb-2">SG ERP Digital Solutions • May-Jun 2024</p>
-                    <p class="text-gray-600">Developed an advanced Retrieval-Augmented Generation system for intelligent query processing and data retrieval.</p>
+            </div>
+            
+            <div class="experience-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="experience-meta">
+                    <div class="experience-date">Aug-Dec 2024</div>
+                    <div class="experience-company">IISER Kolkata</div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Trainee Intern - Healthcare Fraud Detection</h3>
-                    <p class="text-gray-600 mb-2">Infosys Springboard • May-Jul 2024</p>
-                    <p class="text-gray-600">Specialized in unsupervised anomaly detection for healthcare fraud using ML and DL techniques.</p>
+                <div class="experience-details">
+                    <h3>Tax Fraud Detection Researcher</h3>
+                    <p>
+                        Developed a sophisticated machine learning model using Isolation Forest algorithm to identify 
+                        anomalous tax returns indicative of potential fraud. Applied advanced anomaly detection techniques 
+                        to improve financial compliance and optimize resource allocation for tax authorities.
+                    </p>
+                    <p>
+                        <strong>Supervisor:</strong> Prof. Tushar Kanti Nandi, Associate Professor, HSS
+                    </p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Teaching Assistant - Multiple Courses</h3>
-                    <p class="text-gray-600 mb-2">IISER Kolkata • 2023-2025</p>
-                    <p class="text-gray-600">Served as teaching assistant for courses including Introduction to Computation, Electricity and Magnetism, and Mechanics.</p>
+            </div>
+            
+            <div class="experience-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="experience-meta">
+                    <div class="experience-date">May-Jun 2024</div>
+                    <div class="experience-company">SG ERP Digital Solutions</div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Data Science Summer School Participant</h3>
-                    <p class="text-gray-600 mb-2">Hertie School, Berlin • 2022</p>
-                    <p class="text-gray-600">Attended workshops on Deep Learning, Transformers, and GANs, gaining hands-on experience in AI techniques.</p>
+                <div class="experience-details">
+                    <h3>Paid Intern - RAG System Developer</h3>
+                    <p>
+                        Developed an advanced Retrieval-Augmented Generation (RAG) system that intelligently converts 
+                        user queries into machine-understandable format, determines optimal data sources (database or 
+                        file repository), processes accordingly through SQL queries or file retrieval, and presents 
+                        relevant information with comprehensive source links.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="experience-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="experience-meta">
+                    <div class="experience-date">May-Jul 2024</div>
+                    <div class="experience-company">Infosys Springboard</div>
+                </div>
+                <div class="experience-details">
+                    <h3>Trainee Intern - Healthcare Fraud Detection</h3>
+                    <p>
+                        Specialized in unsupervised anomaly detection for healthcare fraud using cutting-edge ML and DL 
+                        techniques. Developed robust models to identify suspicious billing patterns, fraudulent claims, 
+                        and improve resource allocation in healthcare systems, contributing to cost reduction and 
+                        improved patient care quality.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="experience-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="experience-meta">
+                    <div class="experience-date">2023-2025</div>
+                    <div class="experience-company">IISER Kolkata</div>
+                </div>
+                <div class="experience-details">
+                    <h3>Teaching Assistant - Multiple Courses</h3>
+                    <p>
+                        Served as teaching assistant for diverse courses including Introduction to Computation (CS2201), 
+                        Electricity and Magnetism (PH1201), Programming and Data Structures (CS3101), and Mechanics (PH1101). 
+                        Mentored undergraduate students in physics and computer science, conducted tutorials, and 
+                        assisted in curriculum development.
+                    </p>
+                    <p>
+                        <strong>Courses:</strong> CS2201, PH1201, CS3101, PH1101 across multiple semesters
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Achievements Section -->
-    <section id="achievements" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Achievements & Certifications</h2>
-            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8" data-aos="fade-up">International competitions, honors, and recognition for academic and research excellence</p>
+    <section id="achievements" class="section">
+        <h2 class="section-title" data-aos="fade-up">Achievements & Recognition</h2>
+        <p class="section-subtitle" data-aos="fade-up">
+            International competitions, honors, and recognition for academic and research excellence
+        </p>
+        
+        <div class="achievements-grid">
+            <div class="achievement-card" data-aos="fade-up">
+                <div class="achievement-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h3 class="achievement-title">Bronze Honour - IAAC 2022</h3>
+                <p class="achievement-org">International Astronomy and Astrophysics Competition</p>
+                <p class="achievement-description">
+                    Secured Bronze Honour in the prestigious International Astronomy and Astrophysics Competition, 
+                    placing in the top 20% of all participants worldwide. Completed all three stages: 
+                    Screening Test, Pre-final Round, and Final Round.
+                </p>
+            </div>
             
-            <!-- Certifications Subsection -->
-            <div class="mt-20">
-                <h3 class="text-2xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Key Certifications & Achievements</h3>
-                
-                <!-- Online Courses & Certifications -->
-                <div class="mb-16">
-                    <h4 class="text-xl font-semibold text-center text-gray-700 mb-8" data-aos="fade-up">Online Courses & Professional Certifications</h4>
-                    <div class="certifications-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="cert-card gradient-bg p-6 rounded-lg text-white shadow-lg" data-aos="fade-up">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                                    <i class="fab fa-python text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">Python for Everybody Specialization</h4>
-                                    <p class="text-sm opacity-90">University of Michigan - 99.08%</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Coursera</span>
-                            </div>
-                        </div>
-                        <div class="cert-card bg-gradient-to-r from-pink-400 to-red-500 p-6 rounded-lg text-white shadow-lg" data-aos="fade-up" data-aos-delay="50">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                                    <i class="fas fa-database text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">Python Data Structures</h4>
-                                    <p class="text-sm opacity-90">University of Michigan - 99.20%</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Coursera</span>
-                            </div>
-                        </div>
-                        <div class="cert-card bg-gradient-to-r from-blue-400 to-cyan-400 p-6 rounded-lg text-white shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                                    <i class="fas fa-globe text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">Using Python to Access Web Data</h4>
-                                    <p class="text-sm opacity-90">University of Michigan - 98.60%</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Coursera</span>
-                            </div>
-                        </div>
-                        <div class="cert-card bg-gradient-to-r from-pink-400 to-yellow-400 p-6 rounded-lg text-white shadow-lg" data-aos="fade-up" data-aos-delay="150">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                                    <i class="fas fa-chart-bar text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">Python Data Visualization Capstone</h4>
-                                    <p class="text-sm opacity-90">University of Michigan - 100%</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Coursera</span>
-                            </div>
-                        </div>
-                        <div class="cert-card gradient-bg p-6 rounded-lg text-white shadow-lg" data-aos="fade-up" data-aos-delay="200">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                                    <i class="fas fa-brain text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">Machine Learning with Python</h4>
-                                    <p class="text-sm opacity-90">IBM - 98.33%</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Coursera</span>
-                            </div>
-                        </div>
-                        <div class="cert-card bg-gradient-to-r from-teal-200 to-pink-200 p-6 rounded-lg text-gray-800 shadow-lg" data-aos="fade-up" data-aos-delay="250">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-gray-800 bg-opacity-10 p-3 rounded-full mr-4">
-                                    <i class="fas fa-chart-line text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">Machine Learning Foundations</h4>
-                                    <p class="text-sm opacity-80">University of Washington - 96.89%</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-gray-800 bg-opacity-10 px-3 py-1 rounded-full text-sm">Coursera</span>
-                            </div>
-                        </div>
-                        <div class="cert-card bg-gradient-to-r from-red-300 to-pink-300 p-6 rounded-lg text-gray-800 shadow-lg" data-aos="fade-up" data-aos-delay="300">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-gray-800 bg-opacity-10 p-3 rounded-full mr-4">
-                                    <i class="fas fa-calculator text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">Programming with MATLAB</h4>
-                                    <p class="text-sm opacity-80">Vanderbilt University - 100%</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-gray-800 bg-opacity-10 px-3 py-1 rounded-full text-sm">Coursera</span>
-                            </div>
-                        </div>
-                        <div class="cert-card bg-gradient-to-r from-orange-200 to-peach-200 p-6 rounded-lg text-gray-800 shadow-lg" data-aos="fade-up" data-aos-delay="350">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-gray-800 bg-opacity-10 p-3 rounded-full mr-4">
-                                    <i class="fas fa-code text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">C Programming Fundamentals</h4>
-                                    <p class="text-sm opacity-80">UC Santa Cruz - 100%</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-gray-800 bg-opacity-10 px-3 py-1 rounded-full text-sm">Coursera</span>
-                            </div>
-                        </div>
-                        <div class="cert-card bg-gradient-to-r from-green-200 to-yellow-200 p-6 rounded-lg text-gray-800 shadow-lg" data-aos="fade-up" data-aos-delay="400">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-gray-800 bg-opacity-10 p-3 rounded-full mr-4">
-                                    <i class="fas fa-project-diagram text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">Algorithms on Graphs</h4>
-                                    <p class="text-sm opacity-80">UC San Diego - 90%</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-gray-800 bg-opacity-10 px-3 py-1 rounded-full text-sm">Coursera</span>
-                            </div>
-                        </div>
-                        <div class="cert-card gradient-bg p-6 rounded-lg text-white shadow-lg" data-aos="fade-up" data-aos-delay="450">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                                    <i class="fas fa-robot text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">Modern Robotics Foundations</h4>
-                                    <p class="text-sm opacity-90">Northwestern University - 91.56%</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Coursera</span>
-                            </div>
-                        </div>
-                        <div class="cert-card bg-gradient-to-r from-pink-400 to-red-500 p-6 rounded-lg text-white shadow-lg" data-aos="fade-up" data-aos-delay="500">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                                    <i class="fas fa-microphone text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">Public Speaking & Communication</h4>
-                                    <p class="text-sm opacity-90">University of Washington - 94.50%</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Coursera</span>
-                            </div>
-                        </div>
-                        <div class="cert-card bg-gradient-to-r from-blue-400 to-cyan-400 p-6 rounded-lg text-white shadow-lg" data-aos="fade-up" data-aos-delay="550">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                                    <i class="fab fa-google text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">Google Data Analytics Certificate</h4>
-                                    <p class="text-sm opacity-90">Multiple courses - 90%+ average</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Coursera</span>
-                            </div>
-                        </div>
+            <div class="achievement-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="achievement-icon">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <h3 class="achievement-title">IYMC Qualification</h3>
+                <p class="achievement-org">International Youth Math Challenge</p>
+                <p class="achievement-description">
+                    Successfully qualified for the International Youth Math Challenge, one of the biggest 
+                    online mathematics competitions for students worldwide, demonstrating strong 
+                    mathematical problem-solving abilities.
+                </p>
+            </div>
+            
+            <div class="achievement-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="achievement-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3 class="achievement-title">Robotics Quiz Champion</h3>
+                <p class="achievement-org">Lakireddy Bali Reddy College of Engineering</p>
+                <p class="achievement-description">
+                    Achieved perfect 100% score in "Quiz on Industrial Robotics - Support Systems" during 
+                    National Online Technical Quiz Series on "Robotics and Automation", demonstrating 
+                    expertise in robotics and automation technologies.
+                </p>
+            </div>
+            
+            <div class="achievement-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="achievement-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3 class="achievement-title">NASA Scientist for a Day</h3>
+                <p class="achievement-org">NASA Radioisotope Power Systems</p>
+                <p class="achievement-description">
+                    Selected for NASA's "Scientist for a Day" contest, studying three moons of Uranus: 
+                    Ariel, Oberon, and Titania. Demonstrated scientific analysis skills and space science knowledge 
+                    in this competitive NASA program.
+                </p>
+            </div>
+            
+            <div class="achievement-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="achievement-icon">
+                    <i class="fas fa-chess"></i>
+                </div>
+                <h3 class="achievement-title">Chess Tournament Manager</h3>
+                <p class="achievement-org">IISER Kolkata</p>
+                <p class="achievement-description">
+                    Two-time winning manager of IISER Kolkata Chess auction tournaments (Feb 2024 & Mar 2025), 
+                    demonstrating strategic thinking, leadership skills, and competitive excellence in 
+                    chess tournament management.
+                </p>
+            </div>
+            
+            <div class="achievement-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="achievement-icon">
+                    <i class="fab fa-python"></i>
+                </div>
+                <h3 class="achievement-title">Programming Excellence</h3>
+                <p class="achievement-org">Multiple Institutions</p>
+                <p class="achievement-description">
+                    Multiple certifications in Python programming with outstanding grades (99%+) from 
+                    University of Michigan, along with national-level programming competition victories 
+                    and quiz championships across various institutions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Online Courses & Certifications Section -->
+    <section id="certifications" class="section">
+        <h2 class="section-title" data-aos="fade-up">Online Courses & Certifications</h2>
+        <p class="section-subtitle" data-aos="fade-up">
+            Comprehensive learning journey through top-tier institutions and platforms, demonstrating continuous skill development and academic excellence
+        </p>
+        
+        <div class="certifications-grid">
+            <!-- Programming & Computer Science -->
+            <div class="cert-category" data-aos="fade-up">
+                <h3><i class="fab fa-python"></i> Python Programming Specialization</h3>
+                <div class="cert-list">
+                    <div class="cert-item">
+                        <h4>Programming for Everybody (Getting Started with Python)</h4>
+                        <p class="cert-provider">University of Michigan</p>
+                        <p class="cert-grade">Grade: 99.08%</p>
+                        <a href="https://coursera.org/share/ce17a7d59fd6970a3c86de4784eedc89" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
+                    </div>
+                    <div class="cert-item">
+                        <h4>Python Data Structures</h4>
+                        <p class="cert-provider">University of Michigan</p>
+                        <p class="cert-grade">Grade: 99.20%</p>
+                        <a href="https://coursera.org/share/b4211d1818241f272183fc8f3ab702c8" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
+                    </div>
+                    <div class="cert-item">
+                        <h4>Using Python to Access Web Data</h4>
+                        <p class="cert-provider">University of Michigan</p>
+                        <p class="cert-grade">Grade: 98.60%</p>
+                        <a href="https://www.coursera.org/share/6ca2534539c58df56020b6ad63ab9f32" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
+                    </div>
+                    <div class="cert-item">
+                        <h4>Capstone: Retrieving, Processing, and Visualizing Data with Python</h4>
+                        <p class="cert-provider">University of Michigan</p>
+                        <p class="cert-grade">Grade: 100%</p>
+                        <a href="https://www.coursera.org/share/1400a2e0f2c219268bfb6098c57c9318" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
                     </div>
                 </div>
+            </div>
 
-                <!-- Research & Internship Certificates -->
-                <div class="mb-16">
-                    <h4 class="text-xl font-semibold text-center text-gray-700 mb-8" data-aos="fade-up">Research & Internship Certificates</h4>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="cert-card gradient-bg p-6 rounded-lg text-white shadow-lg" data-aos="fade-up">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                                    <i class="fas fa-university text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">Research Intern - UC Berkeley</h4>
-                                    <p class="text-sm opacity-90">Monte Carlo Simulations - May-July 2023</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Field Theories</span>
-                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Quantum Physics</span>
-                            </div>
-                        </div>
-                        <div class="cert-card bg-gradient-to-r from-pink-400 to-red-500 p-6 rounded-lg text-white shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                                    <i class="fas fa-black-hole text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">Research Intern - IIT Bhubaneswar</h4>
-                                    <p class="text-sm opacity-90">Black Hole Physics - Dec 2022-2024</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Astrophysics</span>
-                            </div>
-                        </div>
-                        <div class="cert-card bg-gradient-to-r from-blue-400 to-cyan-400 p-6 rounded-lg text-white shadow-lg" data-aos="fade-up" data-aos-delay="200">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                                    <i class="fas fa-chart-bar text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">Hertie School Data Science Lab</h4>
-                                    <p class="text-sm opacity-90">Berlin, Germany - July-Aug 2022</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">8 Workshops</span>
-                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Deep Learning</span>
-                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">NLP</span>
-                            </div>
-                        </div>
-                        <div class="cert-card bg-gradient-to-r from-pink-400 to-yellow-400 p-6 rounded-lg text-white shadow-lg" data-aos="fade-up" data-aos-delay="300">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                                    <i class="fas fa-satellite text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">Instituto de Astrofísica (IA) Portugal</h4>
-                                    <p class="text-sm opacity-90">Black Hole Shadows - July 2022</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Photon Rings</span>
-                            </div>
-                        </div>
-                        <div class="cert-card bg-gradient-to-r from-teal-200 to-pink-200 p-6 rounded-lg text-gray-800 shadow-lg" data-aos="fade-up" data-aos-delay="400">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-gray-800 bg-opacity-10 p-3 rounded-full mr-4">
-                                    <i class="fas fa-atom text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">QWorld & Womanium</h4>
-                                    <p class="text-sm opacity-80">Quantum Computing Program - July-Aug 2022</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-gray-800 bg-opacity-10 px-3 py-1 rounded-full text-sm">QBronze Diploma</span>
-                            </div>
-                        </div>
-                        <div class="cert-card bg-gradient-to-r from-red-300 to-pink-300 p-6 rounded-lg text-gray-800 shadow-lg" data-aos="fade-up" data-aos-delay="500">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-gray-800 bg-opacity-10 p-3 rounded-full mr-4">
-                                    <i class="fas fa-wave-square text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">IISER Kolkata Research</h4>
-                                    <p class="text-sm opacity-80">Bouncing Ball Dynamics - May-July 2022</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-gray-800 bg-opacity-10 px-3 py-1 rounded-full text-sm">Dynamics</span>
-                            </div>
-                        </div>
-                        <div class="cert-card bg-gradient-to-r from-orange-200 to-peach-200 p-6 rounded-lg text-gray-800 shadow-lg" data-aos="fade-up" data-aos-delay="600">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-gray-800 bg-opacity-10 p-3 rounded-full mr-4">
-                                    <i class="fas fa-satellite-dish text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">Radio Astronomy Summer Programme</h4>
-                                    <p class="text-sm opacity-80">RASP 2022 - 12 weeks program</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-gray-800 bg-opacity-10 px-3 py-1 rounded-full text-sm">Radio Astronomy</span>
-                            </div>
-                        </div>
-                        <div class="cert-card bg-gradient-to-r from-green-200 to-yellow-200 p-6 rounded-lg text-gray-800 shadow-lg" data-aos="fade-up" data-aos-delay="700">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-gray-800 bg-opacity-10 p-3 rounded-full mr-4">
-                                    <i class="fas fa-moon text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">IAGRG School - Gravitation & Cosmology</h4>
-                                    <p class="text-sm opacity-80">May 2022 - Advanced Courses</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-gray-800 bg-opacity-10 px-3 py-1 rounded-full text-sm">Black Holes</span>
-                                <span class="bg-gray-800 bg-opacity-10 px-3 py-1 rounded-full text-sm">Cosmology</span>
-                            </div>
-                        </div>
-                        <div class="cert-card gradient-bg p-6 rounded-lg text-white shadow-lg" data-aos="fade-up" data-aos-delay="800">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                                    <i class="fas fa-flask text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">Summer Science Camp</h4>
-                                    <p class="text-sm opacity-90">University of Burdwan - DST Initiative</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Inspire Internship</span>
-                            </div>
-                        </div>
-                        <div class="cert-card bg-gradient-to-r from-pink-400 to-red-500 p-6 rounded-lg text-white shadow-lg" data-aos="fade-up" data-aos-delay="900">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                                    <i class="fas fa-shield-alt text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">Infosys Springboard</h4>
-                                    <p class="text-sm opacity-90">Healthcare Fraud Detection - May-July 2024</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Anomaly Detection</span>
-                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">ML & DL</span>
-                            </div>
-                        </div>
+            <!-- Machine Learning & Data Science -->
+            <div class="cert-category" data-aos="fade-up" data-aos-delay="100">
+                <h3><i class="fas fa-brain"></i> Machine Learning & Data Science</h3>
+                <div class="cert-list">
+                    <div class="cert-item">
+                        <h4>Machine Learning with Python</h4>
+                        <p class="cert-provider">IBM</p>
+                        <p class="cert-grade">Grade: 98.33%</p>
+                        <a href="https://coursera.org/share/2697ceaafde4d488d327382e3a6226b7" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
+                    </div>
+                    <div class="cert-item">
+                        <h4>Machine Learning Foundations: A Case Study Approach</h4>
+                        <p class="cert-provider">University of Washington</p>
+                        <p class="cert-grade">Grade: 96.89%</p>
+                        <a href="https://coursera.org/share/8d245360af43acfe49b532959a8f242c" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
+                    </div>
+                    <div class="cert-item">
+                        <h4>Foundations: Data, Data, Everywhere</h4>
+                        <p class="cert-provider">Google</p>
+                        <p class="cert-grade">Grade: 94.93%</p>
+                        <a href="https://coursera.org/share/8d487b396d201e67fc7f8c4f2d6cf2d5" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
+                    </div>
+                    <div class="cert-item">
+                        <h4>Ask Questions to Make Data-Driven Decisions</h4>
+                        <p class="cert-provider">Google</p>
+                        <p class="cert-grade">Grade: 90.12%</p>
+                        <a href="https://coursera.org/share/f6d65f0fb1fe8b1e54ff31002afcbc07" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
+                    </div>
+                    <div class="cert-item">
+                        <h4>Prepare Data for Exploration</h4>
+                        <p class="cert-provider">Google</p>
+                        <p class="cert-grade">Grade: 98.75%</p>
+                        <a href="https://coursera.org/share/d107603d9f56933be4339d34dedff64a" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
+                    </div>
+                    <div class="cert-item">
+                        <h4>Process Data from Dirty to Clean</h4>
+                        <p class="cert-provider">Google</p>
+                        <p class="cert-grade">Grade: 91.12%</p>
+                        <a href="https://coursera.org/share/eb5ee5ce73ca9cd32bf986108594a254" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
+                    </div>
+                    <div class="cert-item">
+                        <h4>Analyze Data to Answer Questions</h4>
+                        <p class="cert-provider">Google</p>
+                        <p class="cert-grade">Grade: 91.97%</p>
+                        <a href="https://coursera.org/share/276c7620af28894b59cb9afc8b33a6c6" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
                     </div>
                 </div>
+            </div>
 
-                <!-- Programming & Technical Assessments -->
-                <div class="mb-16">
-                    <h4 class="text-xl font-semibold text-center text-gray-700 mb-8" data-aos="fade-up">Programming & Technical Assessments</h4>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="cert-card bg-gradient-to-r from-green-400 to-green-600 p-6 rounded-lg text-white shadow-lg text-center" data-aos="fade-up">
-                            <div class="cert-icon bg-white bg-opacity-20 p-4 rounded-full inline-block mb-4">
-                                <i class="fab fa-hackerrank text-2xl"></i>
-                            </div>
-                            <h4 class="text-lg font-semibold mb-2">HackerRank Certifications</h4>
-                            <p class="text-sm opacity-90 mb-4">Multiple skill assessments</p>
-                            <div class="flex flex-wrap gap-2 justify-center">
-                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Problem Solving</span>
-                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Python</span>
-                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">SQL</span>
-                            </div>
-                        </div>
-                        <div class="cert-card bg-gradient-to-r from-blue-700 to-blue-500 p-6 rounded-lg text-white shadow-lg text-center" data-aos="fade-up" data-aos-delay="100">
-                            <div class="cert-icon bg-white bg-opacity-20 p-4 rounded-full inline-block mb-4">
-                                <i class="fab fa-ibm text-2xl"></i>
-                            </div>
-                            <h4 class="text-lg font-semibold mb-2">IBM Applied Data Science Badge</h4>
-                            <p class="text-sm opacity-90 mb-4">Level 2 - Digital Badge Program</p>
-                            <div class="flex flex-wrap gap-2 justify-center">
-                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Python 101</span>
-                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Data Analysis</span>
-                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Visualization</span>
-                            </div>
-                        </div>
+            <!-- Other Technical Certifications -->
+            <div class="cert-category" data-aos="fade-up" data-aos-delay="200">
+                <h3><i class="fas fa-laptop-code"></i> Other Technical Certifications</h3>
+                <div class="cert-list">
+                    <div class="cert-item">
+                        <h4>Introduction to Programming with MATLAB</h4>
+                        <p class="cert-provider">Vanderbilt University</p>
+                        <p class="cert-grade">Grade: 100%</p>
+                        <a href="https://coursera.org/share/42c103f74ecf5f2d0c63bf95b14df658" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
+                    </div>
+                    <div class="cert-item">
+                        <h4>C for Everyone: Programming Fundamentals</h4>
+                        <p class="cert-provider">University of California, Santa Cruz</p>
+                        <p class="cert-grade">Grade: 100%</p>
+                        <a href="https://www.coursera.org/share/d90b0c330a72166d961c1f64edf37c29" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
+                    </div>
+                    <div class="cert-item">
+                        <h4>Algorithms on Graphs</h4>
+                        <p class="cert-provider">University of California San Diego</p>
+                        <p class="cert-grade">Grade: 90%</p>
+                        <a href="https://coursera.org/share/3a2a7a2306ddda225f5e5ad24dba6a17" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
+                    </div>
+                    <div class="cert-item">
+                        <h4>Introduction to Data Analysis Using Excel</h4>
+                        <p class="cert-provider">Rice University</p>
+                        <p class="cert-grade">Grade: 100%</p>
+                        <a href="https://coursera.org/share/b891d48448af3696d8ca45bd7adbab49" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
+                    </div>
+                    <div class="cert-item">
+                        <h4>Modern Robotics: Foundations of Robot Motion</h4>
+                        <p class="cert-provider">Northwestern University</p>
+                        <p class="cert-grade">Grade: 91.56%</p>
+                        <a href="https://coursera.org/share/09ff6755bde4fab0e0a46b70d056a85c" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
                     </div>
                 </div>
+            </div>
 
-                <!-- Competition Achievements -->
-                <div class="mb-16">
-                    <h4 class="text-xl font-semibold text-center text-gray-700 mb-8" data-aos="fade-up">Competition Achievements & Awards</h4>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="cert-card bg-gradient-to-r from-yellow-300 to-blue-700 p-6 rounded-lg text-white shadow-lg" data-aos="fade-up">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                                    <i class="fas fa-calculator text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">International Youth Math Challenge</h4>
-                                    <p class="text-sm opacity-90">Qualified - October 2022</p>
-                                </div>
-                            </div>
+            <!-- Professional Skills & Communication -->
+            <div class="cert-category" data-aos="fade-up" data-aos-delay="300">
+                <h3><i class="fas fa-chalkboard-teacher"></i> Professional Skills</h3>
+                <div class="cert-list">
+                    <div class="cert-item">
+                        <h4>Introduction to Public Speaking</h4>
+                        <p class="cert-provider">University of Washington</p>
+                        <p class="cert-grade">Grade: 94.50%</p>
+                        <a href="https://coursera.org/share/47a0b1017d3956c385216d0c4c1969c2" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
+                    </div>
+                    <div class="cert-item">
+                        <h4>Speaking to Inform: Discussing Complex Ideas</h4>
+                        <p class="cert-provider">University of Washington</p>
+                        <p class="cert-grade">Grade: 98%</p>
+                        <a href="https://coursera.org/share/22e17447cc33aa98c29f55309de8f908" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
+                    </div>
+                    <div class="cert-item">
+                        <h4>The Science of Success</h4>
+                        <p class="cert-provider">University of Michigan</p>
+                        <p class="cert-grade">Grade: 85%</p>
+                        <a href="https://coursera.org/share/9f1fef09c24dc586bc2e1f2ebd34275b" class="cert-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HackerRank & IBM Badges -->
+            <div class="cert-category" data-aos="fade-up" data-aos-delay="400">
+                <h3><i class="fas fa-award"></i> Skill Assessments & Badges</h3>
+                <div class="cert-list">
+                    <div class="cert-item">
+                        <h4>HackerRank Skill Assessments</h4>
+                        <p class="cert-provider">HackerRank</p>
+                        <div class="cert-grade">
+                            <a href="https://www.hackerrank.com/certificates/cde7c4fa47cd" class="cert-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Problem Solving (Basic)
+                            </a><br>
+                            <a href="https://www.hackerrank.com/certificates/3f8e390e7037" class="cert-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Problem Solving (Intermediate)
+                            </a><br>
+                            <a href="https://www.hackerrank.com/certificates/1e0a57dc23f3" class="cert-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Python (Basic)
+                            </a><br>
+                            <a href="https://www.hackerrank.com/certificates/375cf42a5fc9" class="cert-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> SQL (Basic)
+                            </a><br>
+                            <a href="https://www.hackerrank.com/certificates/82eddfb3f2e0" class="cert-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> SQL (Intermediate)
+                            </a><br>
+                            <a href="https://www.hackerrank.com/certificates/ddaa11d7b3d9" class="cert-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> SQL (Advanced)
+                            </a>
                         </div>
-                        <div class="cert-card gradient-bg p-6 rounded-lg text-white shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                                    <i class="fas fa-star text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">Bronze Honour - IAAC 2022</h4>
-                                    <p class="text-sm opacity-90">Top 20% - Astronomy & Astrophysics</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cert-card bg-gradient-to-r from-pink-400 to-red-500 p-6 rounded-lg text-white shadow-lg" data-aos="fade-up" data-aos-delay="200">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                                    <i class="fas fa-trophy text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">Robotics Quiz - 1st Position</h4>
-                                    <p class="text-sm opacity-90">100% Score - March 2021</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cert-card bg-gradient-to-r from-blue-400 to-cyan-400 p-6 rounded-lg text-white shadow-lg" data-aos="fade-up" data-aos-delay="300">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                                    <i class="fas fa-rocket text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">NASA Scientist for a Day</h4>
-                                    <p class="text-sm opacity-90">Radioisotope Power Systems - Feb 2021</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cert-card bg-gradient-to-r from-pink-400 to-yellow-400 p-6 rounded-lg text-white shadow-lg" data-aos="fade-up" data-aos-delay="400">
-                            <div class="flex items-center mb-4">
-                                <div class="cert-icon bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                                    <i class="fab fa-python text-xl"></i>
-                                </div>
-                                <div class="cert-info">
-                                    <h4 class="text-lg font-semibold">Python Programming Quizzes</h4>
-                                    <p class="text-sm opacity-90">Multiple National Level Competitions</p>
-                                </div>
-                            </div>
+                    </div>
+                    <div class="cert-item">
+                        <h4>IBM Applied Data Science with Python - Level 2</h4>
+                        <p class="cert-provider">IBM Digital Badge Program</p>
+                        <div class="cert-grade">
+                            <a href="https://www.credly.com/badges/ee7ba9ea-4dab-4b02-a15a-9d7fcc40197d?source=linked_in_profile" class="cert-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Verify the Badge
+                            </a><br>
+                            <a href="https://courses.cognitiveclass.ai/certificates/6c55ab4ee9f8446891d5329578929c3d" class="cert-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Python 101 for Data Science
+                            </a><br>
+                            <a href="https://courses.cognitiveclass.ai/certificates/db74f92c4ef449f58cc9448edddb6f86" class="cert-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Data Analysis with Python
+                            </a><br>
+                            <a href="https://courses.cognitiveclass.ai/certificates/ec56223fae1a4f419a18fbe621d16b84" class="cert-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Data Visualization with Python
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -765,92 +1799,223 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 gradient-bg text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Let's Connect</h2>
-            <p class="text-center max-w-3xl mx-auto mb-8" data-aos="fade-up">Ready to collaborate on cutting-edge AI research, PhD opportunities, or innovative projects</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div data-aos="fade-up">
-                    <h3 class="text-xl font-semibold mb-4">Get In Touch</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <i class="fas fa-envelope mr-3 text-xl"></i>
-                            <p>as20ms091@iiserkol.ac.in</p>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-phone mr-3 text-xl"></i>
-                            <p>+91 9749906800</p>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-map-marker-alt mr-3 text-xl"></i>
-                            <p>Barddhaman, West Bengal, India</p>
-                        </div>
+    <section id="contact" class="section">
+        <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+        <p class="section-subtitle" data-aos="fade-up">
+            Interested in collaborating or discussing research opportunities? Feel free to reach out!
+        </p>
+        
+        <div class="contact-container">
+            <div class="contact-info" data-aos="fade-right">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mt-8 mb-4">Professional Links</h3>
-                    <div class="flex gap-4">
-                        <a href="#" class="text-white hover:underline"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                        <a href="#" class="text-white hover:underline"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="#" class="text-white hover:underline"><i class="fab fa-orcid"></i> ORCID</a>
+                    <div>
+                        <h3>Email</h3>
+                        <p>as20ms091@iiserkol.ac.in</p>
                     </div>
-                    <h3 class="text-xl font-semibold mt-8 mb-4">Research Interests</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Bias Detection in LLMs</span>
-                        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Legal AI Applications</span>
-                        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Healthcare AI Systems</span>
-                        <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Computational Social Science</span>
-                    </div>
-                    <h3 class="text-xl font-semibold mt-8 mb-4">Current Status</h3>
-                    <p>Available for PhD Opportunities. Actively seeking PhD positions in AI/ML/NLP with focus on bias detection, fairness in AI, and computational social science.</p>
                 </div>
-                <div data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-xl font-semibold mb-4">Send Message</h3>
-                    <div class="space-y-4">
-                        <input type="text" placeholder="Full Name" class="w-full p-3 rounded-lg bg-white bg-opacity-20 text-white placeholder-white focus:outline-none">
-                        <input type="email" placeholder="Email Address" class="w-full p-3 rounded-lg bg-white bg-opacity-20 text-white placeholder-white focus:outline-none">
-                        <input type="text" placeholder="Subject" class="w-full p-3 rounded-lg bg-white bg-opacity-20 text-white placeholder-white focus:outline-none">
-                        <select class="w-full p-3 rounded-lg bg-white bg-opacity-20 text-white focus:outline-none">
-                            <option value="" disabled selected>Message Category</option>
-                            <option value="research">Research Collaboration</option>
-                            <option value="phd">PhD Opportunity</option>
-                            <option value="internship">Internship/Job Opportunity</option>
-                            <option value="project">Project Discussion</option>
-                            <option value="mentorship">Mentorship/Guidance</option>
-                            <option value="other">Other</option>
-                        </select>
-                        <textarea placeholder="Message" class="w-full p-3 rounded-lg bg-white bg-opacity-20 text-white placeholder-white focus:outline-none h-32"></textarea>
-                        <button class="w-full bg-white text-indigo-600 px-6 py-3 rounded-full font-semibold hover:bg-indigo-100">Send Message</button>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
                     </div>
-                    <p class="mt-4 text-sm">I typically respond within 24-48 hours. For urgent matters, feel free to reach out via LinkedIn or email directly.</p>
+                    <div>
+                        <h3>Phone</h3>
+                        <p>+91 9749906800</p>
+                    </div>
                 </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h3>Location</h3>
+                        <p>IISER Kolkata, West Bengal, India</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div>
+                        <h3>Website</h3>
+                        <p><a href="https://SarkarAbhisek.github.io" target="_blank">SarkarAbhisek.github.io</a></p>
+                    </div>
+                </div>
+                <div class="social-links" style="justify-content: flex-start; margin-top: 2rem;">
+                    <a href="https://linkedin.com/in/abhiseksarkar01" aria-label="LinkedIn" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/SarkarAbhisek" aria-label="GitHub" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://x.com/abhisek404" aria-label="Twitter" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="contact-form" data-aos="fade-left">
+                <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- References Section -->
+    <section id="references" class="section" style="background: var(--bg-darker);">
+        <h2 class="section-title" data-aos="fade-up">References</h2>
+        <p class="section-subtitle" data-aos="fade-up">
+            Professional contacts who can speak to my qualifications and research experience
+        </p>
+        
+        <div class="achievements-grid" style="grid-template-columns: 1fr;">
+            <div class="achievement-card" data-aos="fade-up">
+                <h3 class="achievement-title">Dr. Kripabandhu Ghosh</h3>
+                <p class="achievement-org">Assistant Professor, Department of Computational and Data Sciences (CDS)</p>
+                <p class="achievement-description">
+                    IISER Kolkata, Mohanpur, West Bengal 741246, India<br>
+                    <strong>Email:</strong> kripaghosh@iiserkol.ac.in<br>
+                    <strong>Relation:</strong> MS Thesis Supervisor
+                </p>
+            </div>
+            
+            <div class="achievement-card" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="achievement-title">Dr. Dwaipayan Roy</h3>
+                <p class="achievement-org">Assistant Professor, Department of Computational and Data Sciences (CDS)</p>
+                <p class="achievement-description">
+                    IISER Kolkata, Mohanpur, West Bengal 741246, India<br>
+                    <strong>Email:</strong> dwaipayan.roy@iiserkol.ac.in
+                </p>
+            </div>
+            
+            <div class="achievement-card" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="achievement-title">Dr. Tushar Kanti Nandi</h3>
+                <p class="achievement-org">Associate Professor, Humanities and Social Sciences (HSS)</p>
+                <p class="achievement-description">
+                    IISER Kolkata, Mohanpur, West Bengal 741246, India<br>
+                    <strong>Email:</strong> tushar@iiserkol.ac.in<br>
+                    <strong>Relation:</strong> Tax Fraud Detection Project Supervisor
+                </p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="flex justify-center gap-4 mb-4">
-                <a href="#home" class="hover:text-indigo-400">Home</a>
-                <a href="#about" class="hover:text-indigo-400">About</a>
-                <a href="#projects" class="hover:text-indigo-400">Projects</a>
-                <a href="#research" class="hover:text-indigo-400">Research</a>
-                <a href="#experience" class="hover:text-indigo-400">Experience</a>
-                <a href="#achievements" class="hover:text-indigo-400">Achievements</a>
-                <a href="#contact" class="hover:text-indigo-400">Contact</a>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#research">Research</a>
+                <a href="#experience">Experience</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#contact">Contact</a>
             </div>
-            <p class="mb-2">© 2025 Abhisek Sarkar. All rights reserved.</p>
-            <p class="mb-2">Built with passion for AI research and social good • <a href="mailto:as20ms091@iiserkol.ac.in" class="hover:underline">as20ms091@iiserkol.ac.in</a></p>
-            <p>"Building intelligent systems that understand, respect, and serve humanity fairly"</p>
+            <p>&copy; 2025 Abhisek Sarkar. All rights reserved.</p>
+            <p>Designed with <i class="fas fa-heart" style="color: #e74c3c;"></i> by Abhisek Sarkar</p>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
     <script>
-        AOS.init();
-        // Mobile menu toggle
-        document.querySelector('button[aria-controls="mobile-menu"]').addEventListener('click', () => {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
+        // Initialize AOS animation library
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
         });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+        scrollTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Form submission handling
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = new FormData(this);
+                fetch(this.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Message sent successfully!');
+                        this.reset();
+                    } else {
+                        throw new Error('Network response was not ok');
+                    }
+                })
+                .catch(error => {
+                    alert('There was a problem sending your message. Please try again later.');
+                    console.error('Error:', error);
+                });
+            });
+        }
     </script>
 </body>
 </html>
